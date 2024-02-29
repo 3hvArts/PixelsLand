@@ -1,0 +1,64 @@
+
+.landcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1920px;
+    margin: 0 auto;
+    background: none;
+}
+
+.landimg {
+    height: 600px;
+    width: 600px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+.land-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.land-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    margin-left: 9px;
+}
+
+.delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 28px;
+}
+
+p {
+    margin: 0;
+}
+
+.pixels {
+    margin: auto;
+    width: 20%;
+    padding: 10px;
+    
+}
+
+.pixels h1 {
+    position: relative;
+    letter-spacing: .02em;
+    text-shadow: .75px .75px 7px #0071ff ad;
+    font-weight: 600;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: border-box,text;
+    background-image: url(/assets/img/sparkle.gif),repeating-linear-gradient(90deg, #44dbff 25%, #e4ff00 47%, #00ff1d 53%, #44dbff 75%);
+    background-size: 7em,10em;
+    animation: refund-god-anim 3s linear infinite
+}

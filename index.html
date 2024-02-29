@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://play.pixels.xyz 'unsafe-inline';">
+    <title>Pixels - CCTV</title>
+    <link rel="stylesheet" href="misc.css">
+</head>
+<body>
+    <div class="pixels">
+    <h1>Pixel CCTV Land</h1>
+    <input type="number" id="land" placeholder="Enter Land Number 1-5000" style="background: none;">
+
+    <button style="background: none;" onclick="viewland()">View</button>
+    </div>
+
+    <div id="landContainer" class="landcontainer" style="background: none;">
+
+    </div>
+
+    <script>
+        function viewland(){
+            var sourceInput = document.getElementById("land");
+            var sourceUrl = sourceInput.value.trim();
+            var landContainer = document.getElementById("landContainer");
+
+            if(sourceUrl >= 1 && sourceUrl <= 5000) {
+                var iframe = document.createElement('iframe');
+                iframe.className = 'landimg';
+                iframe.src = "https://play.pixels.xyz/pixels/share/" + sourceUrl;
+                iframe.frameBorder = "0";
+
+                var landText = document.createElement('p');
+                landText.innerText = "Land Number: " + sourceUrl;
+
+                var deleteButton = document.createElement('button');
+                deleteButton.innerText = 'Delete';
+                deleteButton.className = 'delete-button';
+                deleteButton.onclick = function() {
+                    landContainer.removeChild(wrapperDiv);
+                };
+
+                var contentWrapper = document.createElement('div');
+                contentWrapper.className = 'land-item-content';
+                contentWrapper.appendChild(landText);
+                contentWrapper.appendChild(deleteButton);
+
+                var wrapperDiv = document.createElement('div');
+                wrapperDiv.className = 'land-item';
+                wrapperDiv.appendChild(iframe);
+                wrapperDiv.appendChild(contentWrapper);
+
+                landContainer.appendChild(wrapperDiv);
+                document.getElementById("land").textContent = "";
+            } else {
+                landContainer.innerText = "Please enter a number between 1 and 5000.";
+            }
+        }
+    </script>
+
+
+
+</body>
+</html>
